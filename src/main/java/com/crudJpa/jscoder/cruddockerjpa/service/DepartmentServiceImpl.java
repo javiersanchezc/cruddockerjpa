@@ -66,9 +66,15 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Department findDepartmentById(Long departmentId) {
         Optional<Department> departmentResponse =  departmentRepository.findById(departmentId);
-        Department department = departmentResponse.get();
+        if(departmentResponse.isPresent()) {
+            Department department = departmentResponse.get();
+            return department;
+        }
+        else {
+            return null;
+        }
 
-        return department;
+
     }
 
     // Delete operation
