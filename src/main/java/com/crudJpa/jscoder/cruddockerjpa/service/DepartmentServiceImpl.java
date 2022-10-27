@@ -5,14 +5,13 @@ import com.crudJpa.jscoder.cruddockerjpa.entity.Department;
 import com.crudJpa.jscoder.cruddockerjpa.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class DeparmentServiceImpl implements DeparmentService{
+public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepository;
     // Save operation
@@ -65,9 +64,10 @@ public class DeparmentServiceImpl implements DeparmentService{
     }
 
     @Override
-    public Department findDepartmentById( Long departmentId) {
+    public Department findDepartmentById(Long departmentId) {
         Optional<Department> departmentResponse =  departmentRepository.findById(departmentId);
         Department department = departmentResponse.get();
+
         return department;
     }
 

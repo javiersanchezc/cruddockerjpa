@@ -4,7 +4,7 @@ import com.crudJpa.jscoder.cruddockerjpa.entity.Department;
 
 import java.util.List;
 
-public interface DeparmentService {
+public interface DepartmentService {
     // Save operation
     Department saveDepartment(Department department);
 
@@ -15,8 +15,7 @@ public interface DeparmentService {
     Department updateDepartment(Department department,
                                 Long departmentId);
     // Update operation
-    Department
-    findDepartmentById(Long departmentId);
+    Department findDepartmentById(Long departmentId);
 
     // Delete operation
     void deleteDepartmentById(Long departmentId);
